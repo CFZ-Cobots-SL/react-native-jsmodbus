@@ -1,6 +1,7 @@
 'use strict'
 
 var stampit = require('stampit')
+var net = require('net')
 
 module.exports = stampit()
   .init(function () {
@@ -39,7 +40,7 @@ module.exports = stampit()
         if (this.injectedSocket) {
           socket = this.injectedSocket
         } else {
-          socket = require('net').Socket()
+          socket = new net.Socket()
         }
         socket.on('connect', onSocketConnect)
         socket.on('close', onSocketClose)
@@ -47,7 +48,7 @@ module.exports = stampit()
         socket.on('data', onSocketData)
       }
 
-      socket.connect(this.port, this.host)
+      socket.connect({port: parseInt(this.port), host: this.host})
     }.bind(this)
 
     var onSocketConnect = function () {
