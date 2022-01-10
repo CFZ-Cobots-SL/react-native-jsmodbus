@@ -1,5 +1,7 @@
 'use strict'
 
+global.Buffer = require('buffer').Buffer;
+
 var fs = require('fs')
 var path = require('path')
 var ModbusCore = require('./modbus-client-core.js')
