@@ -17,7 +17,8 @@
     "stampit": "^2.1.2",
     "stampit-event-bus": "^0.1.1",
     "stampit-log": "^0.3.0",
-    "stampit-state-machine": "^0.2.1"
+    "stampit-state-machine": "^0.2.1",
+    "buffer": "^6.0.3"
   },
   "devDependencies": {
     "mocha": "^3.0.2",
